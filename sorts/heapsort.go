@@ -34,7 +34,8 @@ func (h maxHeap) MaxHeapify(i int) {
 func HeapSort(slice []int) []int {
 	h := buildMaxHeap(slice)
 	//log.Println(slice)
-	for i := len(h.slice) - 1; i >= 1; i-- {
+	length := len(h.slice) - 1
+	for i := length; i >= 1; i-- {
 		h.slice[0], h.slice[i] = h.slice[i], h.slice[0]
 		h.heapSize--
 		h.MaxHeapify(0)

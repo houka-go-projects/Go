@@ -3,9 +3,10 @@ package sorts
 
 func SelectionSort(arr []int) []int {
 
-	for i := 0; i < len(arr); i++ {
+	length := len(arr)
+	for i := 0; i < length; i++ {
 		min := i
-		for j := i + 1; j < len(arr); j++ {
+		for j := i + 1; j < length; j++ {
 			if arr[j] < arr[min] {
 				min = j
 			}

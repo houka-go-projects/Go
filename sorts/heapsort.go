@@ -18,10 +18,10 @@ func (h maxHeap) MaxHeapify(i int) {
 	l, r := 2*i+1, 2*i+2
 	max := i
 
-	if l < h.size() && h.slice[l] > h.slice[max] {
+	if l < h.heapSize && h.slice[l] > h.slice[max] {
 		max = l
 	}
-	if r < h.size() && h.slice[r] > h.slice[max] {
+	if r < h.heapSize && h.slice[r] > h.slice[max] {
 		max = r
 	}
 	//log.Printf("MaxHeapify(%v): l,r=%v,%v; max=%v\t%v\n", i, l, r, max, h.slice)
@@ -30,8 +30,6 @@ func (h maxHeap) MaxHeapify(i int) {
 		h.MaxHeapify(max)
 	}
 }
-
-func (h maxHeap) size() int { return h.heapSize } // ???
 
 func HeapSort(slice []int) []int {
 	h := buildMaxHeap(slice)
